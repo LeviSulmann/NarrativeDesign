@@ -15,12 +15,21 @@ public class RandomPlaceKiddo : MonoBehaviour
     public GameObject Kid8;
     public GameObject Kid9;
 
+    public GameObject ChairKiddo;
+
     private KidBehaviour KB;
 
+    //public GameObject prefab; // The prefab to spawn
+   // public Transform spawnLocation;
+
+    public GameObject[] prefabs; // An array of prefabs to choose from
+    public Transform[] spawnLocations;
 
     // Start is called before the first frame update
     void Start()
     {
+
+
         // even voor de test heb ik kid1 op true gezet wel veranderen !!!!!!!!!!!!!!!!!!!
        Kid1.GetComponent<SpriteRenderer>().enabled=false;
        Kid2.GetComponent<SpriteRenderer>().enabled=false;
@@ -34,7 +43,7 @@ public class RandomPlaceKiddo : MonoBehaviour
 
         
 
-        StartCoroutine(Timer());
+        StartCoroutine(RandomKidFunction());
 
     }
 
@@ -45,6 +54,13 @@ public class RandomPlaceKiddo : MonoBehaviour
         KB = FindObjectOfType<KidBehaviour>();
 
    }
+
+    public GameObject SpawnRandomObject(GameObject[] prefabs, Vector3 position, Quaternion rotation)
+    {
+        int index = Random.Range(0, prefabs.Length);
+        GameObject obj = Instantiate(prefabs[index], position, rotation);
+        return obj;
+    }
 
     public void WichKid()
     {
@@ -175,45 +191,76 @@ public class RandomPlaceKiddo : MonoBehaviour
 
     }
 
-    IEnumerator BaseState()
+    public void SpawnObject()
     {
+        // Instantiate(prefab, spawnLocation.position, Quaternion.identity);
 
+        Transform spawnLocation = spawnLocations[Random.Range(0, spawnLocations.Length)];
 
-        yield return new WaitForSeconds(4);
+        // Choose a random prefab
+        GameObject prefab = prefabs[Random.Range(0, prefabs.Length)];
 
-
+        // Spawn the prefab at the chosen spawn location
+        Instantiate(prefab, spawnLocation.position, Quaternion.identity);
     }
 
-    IEnumerator Timer()
+    public void KindGaatWeerVerstoppen()
+    {
+
+        StartCoroutine(RandomKidFunction());
+    }
+
+    public IEnumerator RandomKidFunction()
     {
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
+        SpawnObject();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
+        SpawnObject();
         yield return new WaitForSeconds(5);
         WichKid();
         yield return new WaitForSeconds(5);

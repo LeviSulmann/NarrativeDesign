@@ -17,4 +17,6 @@ public class Kid : MonoBehaviour
     {
         KB = GetComponent<KidBehaviour>();
     }
+
+
 }

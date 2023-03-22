@@ -8,22 +8,28 @@ public class KitchenStuffCounter : MonoBehaviour
     public int kitchenStuffCount = 0;
     private int totalObjects;
     public int activeObjects;
- //   public GameObject Bar;
+
+    public int numKitchenStuff;
+
     public float percentage;
-
-
+    DirtBar dirtBar;
+    
     private void Start()
     {
 
         KitchenStuffCounterFunction();
         activeObjects = 0 + kitchenStuffCount;
+
+       
     }
 
     private void Update()
     {
-       // Debug.Log(activeObjects + "activeObjects");
+      //  Healthbar.SetHealthBar(activeObjects);
+        // Debug.Log(activeObjects + "activeObjects");
         percentage = ((float)activeObjects / kitchenStuffCount * 100f);
         Debug.Log(percentage + "%");
+
     }
 
     void KitchenStuffCounterFunction()
@@ -46,17 +52,8 @@ public class KitchenStuffCounter : MonoBehaviour
 
     public void SetBarSizeByPercentage(GameObject bar, float p)
     {
-        p = percentage;
-        //bar = Bar;
-        // Get the current scale of the bar
-        Vector3 currentScale = bar.transform.localScale;
-
-        // Calculate the new scale based on the percentage value
-        Vector3 newScale = new Vector3(currentScale.x * p / 100f,
-                                       currentScale.y,
-                                       currentScale.z);
-
-        // Set the new scale on the bar
-        bar.transform.localScale = newScale;
+        GameObject[] kitchenStuffObjects = GameObject.FindGameObjectsWithTag("KitchenStuff");
+        numKitchenStuff = kitchenStuffObjects.Length;
+        Debug.Log("Number of KitchenStuff objects: " + numKitchenStuff);
     }
 }
