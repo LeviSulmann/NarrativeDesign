@@ -34,7 +34,7 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseUp()
     {
-                Physics2D.IgnoreLayerCollision(7, 10,false);
+        Physics2D.IgnoreLayerCollision(7, 10,false);
        
         HoldingObject = false;
     }
@@ -48,7 +48,9 @@ public class Draggable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         Physics2D.IgnoreLayerCollision(7, 10, false);
+
 
         if (HoldingObject == false && collision.gameObject.layer == LayerMask.NameToLayer("Bin"))
         {

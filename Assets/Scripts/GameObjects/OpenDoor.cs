@@ -6,6 +6,7 @@ public class OpenDoor : MonoBehaviour
 {
     private SpriteRenderer PLS;
     private Collider2D Col;
+    public bool DoorIsOpen;
     Vector3 mousePositionOffset;
     // Start is called before the first frame update
     void Start()
@@ -20,17 +21,18 @@ public class OpenDoor : MonoBehaviour
         Physics2D.IgnoreLayerCollision(10, 7, false);
     }
     private void OnMouseDown()
-    {
-        Debug.Log("het werkt");
+    { 
         PLS.enabled = false;
         Col.enabled = false;
+        DoorIsOpen = true;
         StartCoroutine(TimerDoor());
     }
 
     IEnumerator TimerDoor()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         PLS.enabled = true;
         Col.enabled = true;
+        DoorIsOpen = true;
     }
 }

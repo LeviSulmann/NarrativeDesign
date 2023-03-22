@@ -7,6 +7,8 @@ TagManager:
   - Kiddo
   - Kids
   - KitchenStuff
+  - Sponge
+  - Dirt
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - BackGround
   - CollisionLayers
   - Door
-  - 
+  - Opstoel
   - 
   - 
   - 

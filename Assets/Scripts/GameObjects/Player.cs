@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kid : MonoBehaviour
+public class Player : MonoBehaviour
 {
-
-    KidBehaviour KB;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +13,6 @@ public class Kid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        KB = GetComponent<KidBehaviour>();
+        
     }
-
-
 }
