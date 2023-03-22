@@ -9,9 +9,11 @@ public class DirtBar : MonoBehaviour
 	public Slider slider;
 	public Gradient gradient;
 	public Image fill;
+	public KitchenStuffCounter KSC;
 
 	public void SetMaxHealth(int health)
 	{
+		health = KSC.activeObjects;
 		slider.maxValue = health;
 		slider.value = health;
 

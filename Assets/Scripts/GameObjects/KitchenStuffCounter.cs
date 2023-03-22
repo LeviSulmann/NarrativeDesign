@@ -12,13 +12,15 @@ public class KitchenStuffCounter : MonoBehaviour
     public int numKitchenStuff;
 
     public float percentage;
-    public DirtBar Healthbar;
-
+    DirtBar dirtBar;
+    
     private void Start()
     {
 
         KitchenStuffCounterFunction();
-        activeObjects = 0 + kitchenStuffCount;     
+        activeObjects = 0 + kitchenStuffCount;
+
+       
     }
 
     private void Update()

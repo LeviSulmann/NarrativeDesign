@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public int maxHealth = 100;
+	public int currentHealth;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public DirtBar dirtBar;
+	
+
+	// Start is called before the first frame update
+	void Start()
+	{
+		currentHealth = maxHealth;
+		dirtBar.SetMaxHealth(maxHealth);
+	}
+
+	// Update is called once per frame
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			TakeDamage(20);
+		}
+	}
+
+	void TakeDamage(int damage)
+	{
+		currentHealth -= damage;
+
+		dirtBar.SetHealth(currentHealth);
+	}
 }
+ 
