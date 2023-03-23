@@ -10,10 +10,22 @@ public class DirtBar : MonoBehaviour
 	public Gradient gradient;
 	public Image fill;
 	public KitchenStuffCounter KSC;
+	public float DirtHeath;
 
-	public void SetMaxHealth(int health)
+
+	private void Start()
+    {
+		KSC = GetComponent<KitchenStuffCounter>();
+
+		DirtHeath = KSC.percentage;
+    }
+
+    private void Update()
+    {
+		SetMaxHealth(DirtHeath);
+    }
+    public void SetMaxHealth(float health)
 	{
-		health = KSC.activeObjects;
 		slider.maxValue = health;
 		slider.value = health;
 
