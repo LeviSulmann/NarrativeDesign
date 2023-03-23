@@ -4041,7 +4041,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Did you hear fast and furious 19 is out now? We \r\nshould go while it\u2019s
+  m_text: "Did you hear fast and furious 200 is out now? We \r\nshould go while it\u2019s
     still in cinema."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5094,7 +5094,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2011232459
 MonoBehaviour:
