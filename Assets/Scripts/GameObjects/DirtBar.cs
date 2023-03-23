@@ -26,7 +26,7 @@ public class DirtBar : MonoBehaviour
     }
     public void SetMaxHealth(float health)
 	{
-		slider.maxValue = health;
+		slider.maxValue = 100;
 		slider.value = health;
 
 		fill.color = gradient.Evaluate(1f);

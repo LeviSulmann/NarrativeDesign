@@ -46,18 +46,16 @@ public class KitchenStuffCounter : MonoBehaviour
 
     public void SetMaxHealth(float health)
     {
-        slider.maxValue = 100;
+        slider.maxValue = health;
         slider.value = health;
 
-        fill.color = gradient.Evaluate(1f);
     }
 
     public void SetHealth(float health)
     {
         slider.value = health;
 
-        fill.color = gradient.Evaluate(slider.normalizedValue);
-    }
+         }
 
 
 
