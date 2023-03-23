@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class KitchenStuffCounter : MonoBehaviour
 {
@@ -13,7 +14,15 @@ public class KitchenStuffCounter : MonoBehaviour
 
     public float percentage;
     DirtBar dirtBar;
-    
+
+
+    public Slider slider;
+    public Gradient gradient;
+    public Image fill;
+    public KitchenStuffCounter KSC;
+    public float DirtHeath;
+    public int currentHealth;
+
     private void Start()
     {
 
@@ -30,7 +39,27 @@ public class KitchenStuffCounter : MonoBehaviour
         percentage = ((float)activeObjects / kitchenStuffCount * 100f);
         Debug.Log(percentage + "%");
 
+
+        SetMaxHealth(percentage);
+
     }
+
+    public void SetMaxHealth(float health)
+    {
+        slider.maxValue = 100;
+        slider.value = health;
+
+        fill.color = gradient.Evaluate(1f);
+    }
+
+    public void SetHealth(float health)
+    {
+        slider.value = health;
+
+        fill.color = gradient.Evaluate(slider.normalizedValue);
+    }
+
+
 
     void KitchenStuffCounterFunction()
     {
